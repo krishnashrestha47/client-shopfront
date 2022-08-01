@@ -1,13 +1,14 @@
 import "./App.css";
-import { Button } from "react-bootstrap";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/home-page/HomePage";
 
 function App() {
   return (
-    <div>
-      <h1>Hello World!</h1>
-      <i class="fa-solid fa-people-carry-box"></i>
-      <Button variant="danger">Hello</Button>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
