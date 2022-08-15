@@ -1,0 +1,31 @@
+.product-page {
+  display: flex;
+}
+
+.aside {
+  width: 20;
+  border: 1px solid red;
+
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.aside > ul > li {
+  list-style-type: none;
+}
+.hidden-sub-category {
+  list-style-type: none;
+  display: none;
+}
+.aside > ul > li:hover {
+  cursor: pointer;
+  background-color: grey;
+}
+.aside > ul > li:hover::after {
+  content: " >";
+}
+
+.main {
+  width: 80%;
+}
