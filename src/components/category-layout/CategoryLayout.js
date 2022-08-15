@@ -1,6 +1,6 @@
 import React from "react";
-import { Card } from "react-bootstrap";
 import bike1 from "../../assets/bike1.png";
+import CustomCard from "../custom-card/CustomCard";
 
 import "./categoryLayout.css";
 
@@ -39,15 +39,7 @@ const CategoryLayout = () => {
       </h1>
       <div className="d-flex justify-content-between flex-wrap mt-5">
         {categories.map((item, i) => (
-          <Card
-            className="category__card mb-5 text-center"
-            style={{ width: "18rem" }}
-          >
-            <Card.Img variant="top" src={item.img} />
-            <Card.Body>
-              <Card.Title className="fs-2">{item.name}</Card.Title>
-            </Card.Body>
-          </Card>
+          <CustomCard item={item} />
         ))}
       </div>
     </div>

@@ -7,7 +7,7 @@ import "./carousels.css";
 
 const Carousels = () => {
   return (
-    <Carousel variant="dark">
+    <Carousel className="mt-2" variant="dark">
       <Carousel.Item>
         <img className="d-block" src={slider1} alt="First slide" />
         <Carousel.Caption>
