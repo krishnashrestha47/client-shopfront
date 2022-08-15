@@ -1,37 +1,86 @@
 import React from "react";
-import { Form, Nav, Navbar } from "react-bootstrap";
+import { Container, Form, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 export const Header = () => {
   return (
-    <Navbar bg="light" variant="light" expand="lg">
-      <Navbar.Brand className="fs-1 fw-bold" href="/">
-        BikeShop
-      </Navbar.Brand>
-      <div className="d-flex justify-content-around">
-        <div className="nav-group">
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
-            <Nav className="fs-4 my-2 my-lg-0" navbarScroll>
-              <Nav.Link href="/mountain-bikes">Mountain</Nav.Link>
-              <Nav.Link href="/road-bikes">Road</Nav.Link>
-              <Nav.Link href="/city-bikes">City</Nav.Link>
-              <Nav.Link href="/electric-bikes">Electric</Nav.Link>
-              <Nav.Link href="/kids-bikes">Kids</Nav.Link>
-              <Nav.Link href="/accessories">Accessories</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </div>
-
-        <div className="d-flex gap-3">
-          <Form.Control type="search" placeholder="Search" />
-          <Nav.Link href="/">
-            <i className="fa-solid fs-3 pt-2 fa-circle-user"></i>
-          </Nav.Link>
-          <Nav.Link href="/">
-            <i className="fa-solid fs-3 pt-2 fa-cart-arrow-down"></i>
-          </Nav.Link>
-        </div>
-      </div>
+    <Navbar bg="light" expand="lg">
+      <Container fluid>
+        <Navbar.Brand href="#">Bike Shop</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="me-auto my-2 my-lg-0"
+            style={{ maxHeight: "100px" }}
+            navbarScroll
+          >
+            <Nav.Link href="#action1">Home</Nav.Link>
+            <NavDropdown title="Mountain" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="#action3">
+                Full Suspension
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action4">Hardtail</NavDropdown.Item>
+              <NavDropdown.Item href="#action5">Downhill</NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Road" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="#action3">Performance</NavDropdown.Item>
+              <NavDropdown.Item href="#action4">All-Road</NavDropdown.Item>
+              <NavDropdown.Item href="#action5">Drop bar</NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="City" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="#action3">Commuter</NavDropdown.Item>
+              <NavDropdown.Item href="#action4">
+                Folding and compact
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action5">Cruiser</NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="E-Bikes" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="#action3">
+                Electric Hybrid
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action4">Electric Road</NavDropdown.Item>
+              <NavDropdown.Item href="#action5">
+                Electric Mountain
+              </NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Kids" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="#action3">
+                12" Wheel (78 - 94cm)
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action4">
+                16" Wheel (84 - 112cm)
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action5">
+                20" Wheel (108 - 129cm)
+              </NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Accessories" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="#action3">Helmet</NavDropdown.Item>
+              <NavDropdown.Item href="#action4">Lights</NavDropdown.Item>
+              <NavDropdown.Item href="#action5">Pumps</NavDropdown.Item>
+              <NavDropdown.Item href="#action5">Locks</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+          <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
+          </Form>
+          <Nav>
+            <Nav.Link href="/">
+              <div className="d-flex align-items-center">
+                <i className="fa-solid fs-3 pt-1 fa-circle-user"></i>{" "}
+                <span className="ml-2">login/signup</span>
+              </div>
+            </Nav.Link>
+            <Nav.Link href="/">
+              <i className="fa-solid fs-3 pt-1 fa-cart-arrow-down"></i>
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
     </Navbar>
   );
 };
