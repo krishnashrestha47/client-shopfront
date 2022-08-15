@@ -1,6 +1,6 @@
 import React from "react";
-import { Card } from "react-bootstrap";
 import bike1 from "../../assets/bike1.png";
+import CustomCard from "../custom-card/CustomCard";
 
 export const Products = () => {
   const bikes = [
@@ -63,13 +63,7 @@ export const Products = () => {
   return (
     <div className="d-flex justify-content-between flex-wrap mt-5">
       {bikes.map((item, i) => (
-        <Card className="mb-5" style={{ width: "18rem" }}>
-          <Card.Img variant="top" src={item.img} />
-          <Card.Body>
-            <Card.Title>{item.name}</Card.Title>
-            <Card.Text>{item.description}</Card.Text>
-          </Card.Body>
-        </Card>
+        <CustomCard item={item} />
       ))}
     </div>
   );
