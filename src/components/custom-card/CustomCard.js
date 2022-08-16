@@ -1,15 +1,13 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import "./customCard.css";
 
-const CustomCard = ({ item }) => {
+const CustomCard = ({ item, size }) => {
   return (
-    <Card
-      className="category__card mb-5 text-center"
-      style={{ width: "18rem" }}
-    >
+    <Card className="custom__card mb-5 text-center" style={{ width: "18rem" }}>
       <Card.Img variant="top" src={item.img} />
       <Card.Body>
-        <Card.Title className="fs-2">{item.name}</Card.Title>
+        <Card.Title className={size}>{item.name}</Card.Title>
       </Card.Body>
     </Card>
   );

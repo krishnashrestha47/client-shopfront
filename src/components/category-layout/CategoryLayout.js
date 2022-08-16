@@ -2,8 +2,6 @@ import React from "react";
 import bike1 from "../../assets/bike1.png";
 import CustomCard from "../custom-card/CustomCard";
 
-import "./categoryLayout.css";
-
 const CategoryLayout = () => {
   const categories = [
     {
@@ -39,7 +37,7 @@ const CategoryLayout = () => {
       </h1>
       <div className="d-flex justify-content-between flex-wrap mt-5">
         {categories.map((item, i) => (
-          <CustomCard item={item} />
+          <CustomCard item={item} size={"fs-2"} />
         ))}
       </div>
     </div>

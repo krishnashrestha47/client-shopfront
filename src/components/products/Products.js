@@ -63,7 +63,7 @@ export const Products = () => {
   return (
     <div className="d-flex justify-content-between flex-wrap mt-5">
       {bikes.map((item, i) => (
-        <CustomCard item={item} />
+        <CustomCard item={item} size={"fs-4"} />
       ))}
     </div>
   );

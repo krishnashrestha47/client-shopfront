@@ -1,3 +1,7 @@
 nav.navbar {
   box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
 }
+.dropdown-menu {
+  /* --bs-dropdown-bg: rgba(0, 0, 0, 0) !important; */
+  --bs-border-color-translucent: rgba(0, 0, 0, 0);
+}
