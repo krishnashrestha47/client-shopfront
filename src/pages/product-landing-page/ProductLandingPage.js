@@ -1,6 +1,8 @@
-import React from "react";
-import { Button, Container } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container } from "react-bootstrap";
 import { DefaultLayout } from "../layout/DefaultLayout";
+
+import "./productLandingPage.css";
 
 const products = [
   {
@@ -21,21 +23,24 @@ const products = [
 ];
 
 export const ProductLandingPage = () => {
-  // const [imageIndex, setImageIndex] = useState(0);
+  const [imageIndex, setImageIndex] = useState(0);
+
+  const handleTab = (i) => {
+    setImageIndex(i);
+  };
 
   return (
-    <DefaultLayout>
+    <DefaultLayout className="prodView">
       <Container>
         {products.map((item, i) => (
-          <div>
-            <div className="images">
+          <div className="d-flex">
+            <div className="images" key={item._id}>
               <div className="large_images">
-                <img src={item.src} alt="bikes" />
+                <img src={item.src[imageIndex]} alt="bikes" />
               </div>
               <div className="thumbnail">
-                ""
                 {item.src.map((img, i) => (
-                  <img src={img} alt="" />
+                  <img src={img} alt="" key={i} onClick={() => handleTab(i)} />
                 ))}
               </div>
             </div>
@@ -46,7 +51,12 @@ export const ProductLandingPage = () => {
               </div>
 
               <p>{item.description}</p>
-              <Button className="cart">Add to Cart</Button>
+
+              <div className="quantity fs-4">
+                Quantity: <input type="number" />
+              </div>
+
+              <button className="cart">Add to Cart</button>
             </div>
           </div>
         ))}
