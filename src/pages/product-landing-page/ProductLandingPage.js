@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import React from "react";
+import { Button, Container } from "react-bootstrap";
 import { DefaultLayout } from "../layout/DefaultLayout";
 
 const products = [
@@ -21,7 +21,7 @@ const products = [
 ];
 
 export const ProductLandingPage = () => {
-  const [imageIndex, setImageIndex] = useState(0);
+  // const [imageIndex, setImageIndex] = useState(0);
 
   return (
     <DefaultLayout>
@@ -30,7 +30,7 @@ export const ProductLandingPage = () => {
           <div>
             <div className="images">
               <div className="large_images">
-                <img src={item.src} alt="image" />
+                <img src={item.src} alt="bikes" />
               </div>
               <div className="thumbnail">
                 ""
@@ -44,6 +44,9 @@ export const ProductLandingPage = () => {
                 <h2>{item.title}</h2>
                 <span>${item.price}</span>
               </div>
+
+              <p>{item.description}</p>
+              <Button className="cart">Add to Cart</Button>
             </div>
           </div>
         ))}
