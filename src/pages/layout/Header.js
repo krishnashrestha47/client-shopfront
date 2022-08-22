@@ -1,16 +1,21 @@
 import React from "react";
 import { Container, Form, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 export const Header = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">Bike Shop</Navbar.Brand>
+        <Link to="/" className="nav-link">
+          <Navbar.Brand>Bike Shop</Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto my-2 my-lg-0" navbarScroll>
-            <Nav.Link href="#action1">Home</Nav.Link>
+            <Link to="/products" className="nav-link">
+              All products
+            </Link>
             <NavDropdown title="Mountain" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">
                 Full Suspension
