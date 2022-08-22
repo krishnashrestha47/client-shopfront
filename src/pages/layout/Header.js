@@ -78,7 +78,10 @@ export const Header = () => {
               </div>
             </Nav.Link>
             <Nav.Link href="/">
-              <i className="fa-solid fs-3 pt-1 fa-cart-arrow-down"></i>
+              <div className="cart-item">
+                <i className="fa-solid fs-3 pt-1 fa-cart-arrow-down"></i>
+                <span className="cart">10</span>
+              </div>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
