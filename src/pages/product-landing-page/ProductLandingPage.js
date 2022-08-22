@@ -33,7 +33,7 @@ export const ProductLandingPage = () => {
     <DefaultLayout className="prodView">
       <Container>
         {products.map((item, i) => (
-          <div className="d-flex">
+          <div className="item-display">
             <div className="images" key={item._id}>
               <div className="large_images">
                 <img src={item.src[imageIndex]} alt="bikes" />

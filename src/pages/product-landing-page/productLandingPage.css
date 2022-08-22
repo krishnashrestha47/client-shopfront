@@ -5,6 +5,13 @@
   box-shadow: 0 0 5px #ccc;
 }
 
+.item-display {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 30px 0;
+}
+
 .images {
   display: flex;
   flex-direction: column;
@@ -21,7 +28,7 @@
   width: 600px;
   height: 390px;
   max-height: 400px;
-  display: block;
+  /* display: block; */
   /* object-fit: cover; */
 }
 
@@ -89,3 +96,9 @@
     width: 50px;
   }
 }
+/* 
+@media (min-width: 768px) {
+  .item-display {
+    display: flex;
+  }
+} */
