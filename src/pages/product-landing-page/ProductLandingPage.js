@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import { DefaultLayout } from "../layout/DefaultLayout";
 
+import { useDispatch, useSelector } from "react-redux";
+
 import "./productLandingPage.css";
+import { cartAction } from "../../components/cart/cartAction";
 
 const products = [
   {
@@ -23,7 +26,15 @@ const products = [
 ];
 
 export const ProductLandingPage = () => {
+  const dispatch = useDispatch();
+
   const [imageIndex, setImageIndex] = useState(0);
+
+  const { cart } = useSelector((state) => state.cart);
+
+  const handleOnAddToCart = (product) => {
+    dispatch(cartAction(product));
+  };
 
   const handleTab = (i) => {
     setImageIndex(i);
@@ -56,7 +67,12 @@ export const ProductLandingPage = () => {
                 Quantity: <input type="number" />
               </div>
 
-              <button className="cart">Add to Cart</button>
+              <button
+                className="add-to-cart"
+                onClick={() => handleOnAddToCart(item)}
+              >
+                Add to Cart
+              </button>
             </div>
           </div>
         ))}
