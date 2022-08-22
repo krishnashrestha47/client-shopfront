@@ -3,3 +3,7 @@ body {
   padding: 0 1%;
   background: #f8f9fa;
 }
+
+.main {
+  min-height: 80vh;
+}

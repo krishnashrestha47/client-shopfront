@@ -7,7 +7,7 @@ const ProductPage = () => {
   return (
     <DefaultLayout>
       <div className="product-page gap-3">
-        <section className="aside ">
+        <section className="aside">
           <h1>Select</h1>
           <ul>
             <li>
@@ -26,7 +26,7 @@ const ProductPage = () => {
             <li>Accessories</li>
           </ul>
         </section>
-        <section className="main">
+        <section className="product-section">
           <h1>Products</h1>
           <Products />
         </section>
