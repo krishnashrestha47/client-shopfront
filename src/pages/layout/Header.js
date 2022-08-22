@@ -77,12 +77,12 @@ export const Header = () => {
                 <span className="ml-2">login/signup</span>
               </div>
             </Nav.Link>
-            <Nav.Link href="/">
+            <Link className="nav-link" to="/checkout">
               <div className="cart-item">
                 <i className="fa-solid fs-3 pt-1 fa-cart-arrow-down"></i>
                 <span className="cart">10</span>
               </div>
-            </Nav.Link>
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
