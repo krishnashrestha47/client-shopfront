@@ -34,6 +34,34 @@ const bikes = [
       "The Silverback Stride SE 27.5 is a hardtail mountain bike for the entry level ride that wants to head off the footpath for capable tyres and some added suspension. The Stride SE has a hydro-formed alloy 6061 frame with Silverback's own POP Geometry that puts you in a balanced position for better traction and control.",
     price: 524,
   },
+  {
+    _id: "3",
+    name: "Cube Stereo 120 Rookie Dual Suspension Mountain Bike Actionteam (2022)",
+    src: [
+      "https://www.99bikes.com.au/media/catalog/product/2/2/22cubestereo150c-62race29flashwhitencarbon.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=560&width=700&canvas=700:560&dpr=2%202x",
+      "https://www.99bikes.com.au/media/catalog/product/2/2/22cubestereo150c-62race29flashwhitencarbon___4.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=560&width=700&canvas=700:560&dpr=2%202x",
+      "https://www.99bikes.com.au/media/catalog/product/2/2/22cubestereo150c-62race29flashwhitencarbon___5.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=560&width=700&canvas=700:560&dpr=2%202x",
+      "https://www.99bikes.com.au/media/catalog/product/2/2/22cubestereo150c-62race29flashwhitencarbon___6.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=560&width=700&canvas=700:560&dpr=2%202x",
+      "https://www.99bikes.com.au/media/catalog/product/2/2/22cubestereo150c-62race29flashwhitencarbon_0.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=560&width=700&canvas=700:560&dpr=2%202x",
+    ],
+    description:
+      "The Cube Stereo 150 C:62 Race is a sweet blend of form and function, why give up one when you can have both? The Stereo 150 C:62 Race is a bike you can rely on, whether it's rough and ready trails or a casual Sunday ride, it'll take everything in its stride without so much as a blink.",
+    price: 6099,
+  },
+  {
+    _id: "4",
+    name: "Merida Scultura Rim 100 Women's Road Bike Blue/White (2021)",
+    src: [
+      "https://www.99bikes.com.au/media/catalog/product/m/e/merida_scultura_rim_100_women_s_road_bike_blue_white_2021_.png?quality=80&bg-color=255,255,255&fit=bounds&height=560&width=700&canvas=700:560&format=jpeg&dpr=2%202x",
+      "https://www.99bikes.com.au/media/catalog/product/j/o/josephbyford-100673-2681.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=560&width=700&canvas=700:560&dpr=2%202x",
+      "https://www.99bikes.com.au/media/catalog/product/j/o/josephbyford-100673-2675.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=560&width=700&canvas=700:560&dpr=2%202x",
+      "https://www.99bikes.com.au/media/catalog/product/j/o/josephbyford-100673-2676.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=560&width=700&canvas=700:560&dpr=2%202x",
+      "https://www.99bikes.com.au/media/catalog/product/j/o/josephbyford-100673-2677.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=560&width=700&canvas=700:560&dpr=2%202x",
+    ],
+    description:
+      "The Merida Scultura Rim 100 Road Bike is an aluminium frame bike built for any challenge on the road with its versatility and highly-refined features. The aluminium frame is built to minimise weight and maximise power transfer, stiffness and durability. ",
+    price: 1199,
+  },
 ];
 
 function App() {

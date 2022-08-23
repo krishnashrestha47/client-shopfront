@@ -27,7 +27,6 @@ const ProductPage = ({ bikes }) => {
           </ul>
         </section>
         <section className="product-section">
-          <h1>Products</h1>
           <Products bikes={bikes} />
         </section>
       </div>

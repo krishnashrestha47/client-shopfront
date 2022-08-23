@@ -25,7 +25,10 @@
 .aside > ul > li:hover::after {
   content: " >";
 }
+.aside {
+  width: 20%;
+}
 
 .product-section {
-  width: 80%;
+  width: 70%;
 }

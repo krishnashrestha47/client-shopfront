@@ -98,16 +98,19 @@ export const Products = ({ bikes }) => {
   //     "The Émonda SLR 6 eTap is an ultra-light, aerodynamic carbon road bike that's designed and built to be the fastest climbing bike we’ve ever made.",
   // },
   return (
-    <div className="d-flex justify-content-between flex-wrap mt-5">
-      {bikes.map((item, i) => (
-        <Link
-          key={i}
-          className="nav-link"
-          to={`/product-landing-page/${item._id}`}
-        >
-          <CustomCard item={item} size={"fs-4"} />
-        </Link>
-      ))}
-    </div>
+    <>
+      <h1 className="text-center">Products</h1>
+      <div className="d-flex justify-content-between flex-wrap mt-5">
+        {bikes.map((item, i) => (
+          <Link
+            key={i}
+            className="nav-link"
+            to={`/product-landing-page/${item._id}`}
+          >
+            <CustomCard item={item} size={"fs-4"} />
+          </Link>
+        ))}
+      </div>
+    </>
   );
 };
