@@ -6,7 +6,7 @@ import "./Home.css";
 
 const Home = ({ bikes }) => {
   return (
-    <div className="main">
+    <div className="container">
       <Carousels />
       <CategoryLayout />
       <Products bikes={bikes} />

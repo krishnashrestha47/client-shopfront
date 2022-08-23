@@ -7,28 +7,39 @@ import "./carousels.css";
 
 const Carousels = () => {
   return (
-    <Carousel className="mt-2" variant="dark">
+    <Carousel className="mt-2 container" variant="light">
       <Carousel.Item>
-        <img className="d-block" src={slider1} alt="First slide" />
+        <img
+          className="d-block"
+          src="https://cdn.mos.cms.futurecdn.net/5KM387fgzNZecZSMP5Gx8j-1200-80.jpg"
+          alt="First slide"
+        />
         <Carousel.Caption>
           <h3>First slide label</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img className="d-block" src={slider3} alt="Second slide" />
-
+        <img
+          className="d-block"
+          src="https://images.giant-bicycles.com/b_white,c_crop,h_600,q_70,w_1920/y11muho9u62fvrlguezt/giant_mtb_banner_navi21.jpg"
+          alt="First slide"
+        />
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3 className="text-warning">second slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img className="d-block" src={slider2} alt="Third slide" />
+        <img
+          className="d-block"
+          src="https://outdoorgearlab-mvnab3pwrvp3t0.stackpathdns.com/photos/21/90/340514_1232_XL.jpg"
+          alt="Third slide"
+        />
 
         <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
+          <h3 className="text-dark">Third slide label</h3>
+          <p className="text-primary">
             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
           </p>
         </Carousel.Caption>
