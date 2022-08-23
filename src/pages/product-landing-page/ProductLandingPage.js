@@ -5,7 +5,7 @@ import { DefaultLayout } from "../layout/DefaultLayout";
 import { useDispatch, useSelector } from "react-redux";
 
 import "./productLandingPage.css";
-import { cartAction } from "../../components/cart/cartAction";
+import { setCartItems } from "../../components/cart/cartSlice";
 
 const products = [
   {
@@ -30,10 +30,10 @@ export const ProductLandingPage = () => {
 
   const [imageIndex, setImageIndex] = useState(0);
 
-  const { cart } = useSelector((state) => state.cart);
+  // const { cart } = useSelector((state) => state.cart);
 
   const handleOnAddToCart = (product) => {
-    dispatch(cartAction(product));
+    dispatch(setCartItems(product));
   };
 
   const handleTab = (i) => {
