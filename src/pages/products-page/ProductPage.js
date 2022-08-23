@@ -3,7 +3,7 @@ import { Products } from "../../components/products/Products.js";
 import { DefaultLayout } from "../layout/DefaultLayout.js";
 import "./productPage.css";
 
-const ProductPage = () => {
+const ProductPage = ({ bikes }) => {
   return (
     <DefaultLayout>
       <div className="product-page gap-3">
@@ -28,7 +28,7 @@ const ProductPage = () => {
         </section>
         <section className="product-section">
           <h1>Products</h1>
-          <Products />
+          <Products bikes={bikes} />
         </section>
       </div>
     </DefaultLayout>
