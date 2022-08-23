@@ -81,7 +81,15 @@ export const Cart = () => {
             </tbody>
           </Table>
         ) : (
-          <h1>You don't have any items on the cart</h1>
+          <div className="text-center">
+            <h1 className="text-danger">
+              Please add your bike 🚲 to checkout !
+            </h1>
+            <img
+              src="https://cdni.iconscout.com/illustration/premium/thumb/confusing-woman-due-to-empty-cart-4558760-3780056.png"
+              alt=""
+            />
+          </div>
         )}
       </Container>
     </div>

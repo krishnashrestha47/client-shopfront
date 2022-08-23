@@ -109,7 +109,7 @@ export const Products = ({ bikes }) => {
           >
             <CustomCard
               productImageStyle={{ height: "10rem", padding: "10px" }}
-              productCardSize={{ width: "18rem", height: "22rem" }}
+              productCardSize={{ width: "18rem", height: "18rem" }}
               item={item}
               f-size={"fs-4"}
             />
