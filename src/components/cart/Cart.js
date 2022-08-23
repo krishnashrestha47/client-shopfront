@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Col, Container, Row, Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { reduceCartItem, setCartItems } from "./cartSlice";
+import { reduceCartItem, removeCartItem, setCartItems } from "./cartSlice";
 
 export const Cart = () => {
   const dispatch = useDispatch();
@@ -12,6 +12,10 @@ export const Cart = () => {
 
   const handleOnDecreaseItem = (item) => {
     dispatch(reduceCartItem(item));
+  };
+
+  const handleOnRemoveItem = (item) => {
+    dispatch(removeCartItem(item));
   };
 
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -44,7 +48,11 @@ export const Cart = () => {
                         <h6>{item.name}</h6>
                         <p>${item.price}</p>
 
-                        <Button className="btn-sm" variant="danger">
+                        <Button
+                          onClick={() => handleOnRemoveItem(item)}
+                          className="btn-sm"
+                          variant="danger"
+                        >
                           Remove
                         </Button>
                       </div>
