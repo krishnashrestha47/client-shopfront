@@ -1,9 +1,14 @@
 import React from "react";
 import { Container, Form, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { setCartItems } from "../../components/cart/cartSlice";
 import "./Header.css";
 
 export const Header = () => {
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  console.log(cartItems);
+
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
@@ -80,7 +85,7 @@ export const Header = () => {
             <Link className="nav-link" to="/checkout">
               <div className="cart-item">
                 <i className="fa-solid fs-3 pt-1 fa-cart-arrow-down"></i>
-                <span className="cart">10</span>
+                <span className="cart">{cartItems.length}</span>
               </div>
             </Link>
           </Nav>

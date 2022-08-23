@@ -36,7 +36,7 @@ export const Cart = () => {
               {cartItems.map((item, i) => (
                 <tr>
                   <td>
-                    <div className="d-flex ">
+                    <div className="d-flex">
                       <div className="m-1">
                         <img
                           style={{ width: "100px", height: "100px" }}
