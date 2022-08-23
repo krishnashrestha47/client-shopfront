@@ -33,8 +33,8 @@ export const ProductLandingPage = ({ bikes }) => {
 
   // const { cart } = useSelector((state) => state.cart);
 
-  const handleOnAddToCart = (bikes) => {
-    dispatch(setCartItems(bikes));
+  const handleOnAddToCart = (bike) => {
+    dispatch(setCartItems(bike));
   };
 
   const handleTab = (i) => {
