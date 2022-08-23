@@ -2,14 +2,14 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import "./customCard.css";
 
-const CustomCard = ({ item, size }) => {
+const CustomCard = ({ productImageStyle, productCardSize, item, size }) => {
   return (
     <Card
       className="custom__card mb-5 text-center"
-      style={{ width: "18rem", height: "22rem" }}
+      style={productCardSize || { width: "18rem" }}
     >
       <Card.Img
-        style={{ height: "10rem", padding: "10px" }}
+        style={productImageStyle}
         variant="top"
         src={item.img || item.src[0]}
       />

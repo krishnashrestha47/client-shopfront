@@ -107,7 +107,12 @@ export const Products = ({ bikes }) => {
             className="nav-link"
             to={`/product-landing-page/${item._id}`}
           >
-            <CustomCard item={item} size={"fs-4"} />
+            <CustomCard
+              productImageStyle={{ height: "10rem", padding: "10px" }}
+              productCardSize={{ width: "18rem", height: "22rem" }}
+              item={item}
+              f-size={"fs-4"}
+            />
           </Link>
         ))}
       </div>
