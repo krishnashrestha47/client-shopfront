@@ -1,13 +1,17 @@
 import React from "react";
 import { Button, Col, Container, Row, Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { setCartItems } from "./cartSlice";
+import { reduceCartItem, setCartItems } from "./cartSlice";
 
 export const Cart = () => {
   const dispatch = useDispatch();
 
   const handleOnAddItem = (item) => {
     dispatch(setCartItems(item));
+  };
+
+  const handleOnDecreaseItem = (item) => {
+    dispatch(reduceCartItem(item));
   };
 
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -48,7 +52,12 @@ export const Cart = () => {
                   </td>
                   <td>
                     <div className="d-flex">
-                      <Button className="btn-sm m-1">-</Button>
+                      <Button
+                        onClick={() => handleOnDecreaseItem(item)}
+                        className="btn-sm m-1"
+                      >
+                        -
+                      </Button>
                       <span className="fs-5">{item.qty}</span>
                       <Button
                         onClick={() => handleOnAddItem(item)}
