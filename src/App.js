@@ -68,8 +68,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage bikes={bikes} />}></Route>
-        <Route path="/products" element={<ProductPage bikes={bikes} />}></Route>
+        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/products" element={<ProductPage />}></Route>
         <Route path="/checkout" element={<Checkout bikes={bikes} />}></Route>
         <Route
           path="/product-landing-page/:_id"
