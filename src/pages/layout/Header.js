@@ -9,6 +9,9 @@ export const Header = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
   const { categories } = useSelector((state) => state.category);
 
+  const parentCategories = categories.filter((item) => !item.parentCatId);
+  const subCategories = categories.filter((item) => item.parentCatId);
+
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
@@ -21,51 +24,19 @@ export const Header = () => {
             <Link to="/products" className="nav-link">
               All products
             </Link>
-            <NavDropdown title="Mountain" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">
-                Full Suspension
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Hardtail</NavDropdown.Item>
-              <NavDropdown.Item href="#action5">Downhill</NavDropdown.Item>
-            </NavDropdown>
-            <NavDropdown title="Road" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Performance</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">All-Road</NavDropdown.Item>
-              <NavDropdown.Item href="#action5">Drop bar</NavDropdown.Item>
-            </NavDropdown>
-            <NavDropdown title="City" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Commuter</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Folding and compact
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action5">Cruiser</NavDropdown.Item>
-            </NavDropdown>
-            <NavDropdown title="E-Bikes" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">
-                Electric Hybrid
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Electric Road</NavDropdown.Item>
-              <NavDropdown.Item href="#action5">
-                Electric Mountain
-              </NavDropdown.Item>
-            </NavDropdown>
-            <NavDropdown title="Kids" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">
-                12" Wheel (78 - 94cm)
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                16" Wheel (84 - 112cm)
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action5">
-                20" Wheel (108 - 129cm)
-              </NavDropdown.Item>
-            </NavDropdown>
-            <NavDropdown title="Accessories" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Helmet</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Lights</NavDropdown.Item>
-              <NavDropdown.Item href="#action5">Pumps</NavDropdown.Item>
-              <NavDropdown.Item href="#action5">Locks</NavDropdown.Item>
-            </NavDropdown>
+
+            {parentCategories.map((item, i) => (
+              <NavDropdown title={item.catName} id="navbarScrollingDropdown">
+                {subCategories.map(
+                  (childCat) =>
+                    childCat.parentCatId === item._id && (
+                      <NavDropdown.Item href="#action3">
+                        {childCat.catName}
+                      </NavDropdown.Item>
+                    )
+                )}
+              </NavDropdown>
+            ))}
           </Nav>
           <Form className="d-flex">
             <Form.Control
