@@ -40,7 +40,10 @@ export const Cart = () => {
                       <div className="m-1">
                         <img
                           style={{ width: "100px", height: "100px" }}
-                          src={item.src[0]}
+                          src={`http://localhost:8001/${item.images[0].substr(
+                            7
+                          )}`}
+                          crossorigin="anonymous"
                           alt=""
                         />
                       </div>

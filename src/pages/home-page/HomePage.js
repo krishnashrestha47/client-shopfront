@@ -3,10 +3,10 @@ import Home from "../../components/home/Home";
 
 import { DefaultLayout } from "../layout/DefaultLayout";
 
-const HomePage = ({ bikes }) => {
+const HomePage = () => {
   return (
     <DefaultLayout>
-      <Home bikes={bikes} />
+      <Home />
     </DefaultLayout>
   );
 };

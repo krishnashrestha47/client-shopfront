@@ -36,9 +36,9 @@ const CategoryLayout = () => {
         <i className="fa-solid fa-bicycle"></i> Shop By Category
       </h1>
       <div className="d-flex justify-content-between flex-wrap mt-5">
-        {categories.map((item, i) => (
-          <CustomCard item={item} size={"fs-2"} />
-        ))}
+        {/* {categories.map((item, i) => (
+          // <CustomCard item={item} size={"fs-2"} />
+        ))} */}
       </div>
     </div>
   );

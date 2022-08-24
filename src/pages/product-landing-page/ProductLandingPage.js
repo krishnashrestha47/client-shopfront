@@ -8,8 +8,9 @@ import "./productLandingPage.css";
 import { setCartItems } from "../../components/cart/cartSlice";
 import { useParams } from "react-router-dom";
 
-export const ProductLandingPage = ({ bikes }) => {
+export const ProductLandingPage = () => {
   const dispatch = useDispatch();
+  const { products } = useSelector((state) => state.product);
 
   const [imageIndex, setImageIndex] = useState(0);
 
@@ -24,7 +25,7 @@ export const ProductLandingPage = ({ bikes }) => {
   };
   const { _id } = useParams();
 
-  const bike = bikes.filter((item) => item._id === _id);
+  const bike = products.filter((item) => item._id === _id);
 
   return (
     <DefaultLayout className="prodView">
@@ -33,11 +34,23 @@ export const ProductLandingPage = ({ bikes }) => {
           <div key={i} className="item-display">
             <div className="images">
               <div className="large_images">
-                <img src={item.src[imageIndex]} alt="bikes" />
+                <img
+                  src={`http://localhost:8001/${item.images[imageIndex].substr(
+                    7
+                  )}`}
+                  crossOrigin="anonymous"
+                  alt="bikes"
+                />
               </div>
               <div className="thumbnail">
-                {item.src.map((img, i) => (
-                  <img src={img} alt="" key={i} onClick={() => handleTab(i)} />
+                {item.images.map((img, i) => (
+                  <img
+                    src={`http://localhost:8001/${img.substr(7)}`}
+                    crossOrigin="anonymous"
+                    alt=""
+                    key={i}
+                    onClick={() => handleTab(i)}
+                  />
                 ))}
               </div>
             </div>

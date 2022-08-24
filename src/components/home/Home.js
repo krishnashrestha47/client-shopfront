@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Carousels from "../carousel/Carousels.js";
 import CategoryLayout from "../category-layout/CategoryLayout.js";
 import { Products } from "../products/Products.js";
 import "./Home.css";
 
-const Home = ({ bikes }) => {
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProductsAction } from "../products/productAction.js";
+
+const Home = () => {
+  const dispatch = useDispatch();
+
+  const { products } = useSelector((state) => state.product);
+  console.log(products);
+
+  useEffect(() => {
+    dispatch(fetchProductsAction());
+  }, []);
+
   return (
     <div className="container">
       <Carousels />
       <CategoryLayout />
-      <Products bikes={bikes} />
+      <Products />
     </div>
   );
 };
