@@ -1,5 +1,17 @@
+.logo {
+  height: 4rem;
+  width: 6rem;
+  border: 2px inset rgb(179, 191, 212);
+  border-radius: 50%;
+  padding: 4px;
+}
+
 nav.navbar {
   box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  color: black !important;
 }
 .dropdown-menu {
   /* --bs-dropdown-bg: rgba(0, 0, 0, 0) !important; */

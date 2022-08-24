@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { setCartItems } from "../../components/cart/cartSlice";
 import "./Header.css";
+import logo from "../../assets/logo.png";
 
 export const Header = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -13,10 +14,12 @@ export const Header = () => {
   const subCategories = categories.filter((item) => item.parentCatId);
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar className="fw-bold" bg="light" expand="lg">
       <Container fluid>
         <Link to="/" className="nav-link">
-          <Navbar.Brand>Bike Shop</Navbar.Brand>
+          <Navbar.Brand>
+            <img className="logo" src={logo} />
+          </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
