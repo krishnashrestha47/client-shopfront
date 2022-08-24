@@ -56,7 +56,11 @@ export const Header = () => {
             <Link className="nav-link" to="/checkout">
               <div className="cart-item">
                 <i className="fa-solid fs-3 pt-1 fa-cart-arrow-down"></i>
-                <span className="cart">{cartItems.length}</span>
+                {cartItems.length > 0 ? (
+                  <span className="cart">{cartItems.length}</span>
+                ) : (
+                  <span></span>
+                )}
               </div>
             </Link>
           </Nav>
