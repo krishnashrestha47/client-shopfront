@@ -3,7 +3,6 @@ import { Card } from "react-bootstrap";
 import "./customCard.css";
 
 const CustomCard = ({ productImageStyle, productCardSize, item, size }) => {
-  console.log(item.images);
   const url = "http://localhost:8001/";
   return (
     <Card
@@ -13,8 +12,8 @@ const CustomCard = ({ productImageStyle, productCardSize, item, size }) => {
       <Card.Img
         style={productImageStyle}
         variant="top"
-        crossorigin="anonymous"
-        src={`${url + item?.images[0].substr(7)}`}
+        crossOrigin="anonymous"
+        src={`${url + item?.images[0].substr(7)}` || item.img}
       />
       <Card.Body>
         <Card.Title className={size}>{item.name}</Card.Title>

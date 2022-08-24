@@ -8,8 +8,6 @@ export const Products = () => {
 
   const { products } = useSelector((state) => state.product);
 
-  console.log(products);
-
   return (
     <>
       <h1 className="text-center">Products</h1>

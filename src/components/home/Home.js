@@ -6,16 +6,19 @@ import "./Home.css";
 
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductsAction } from "../products/productAction.js";
+import { fetchCategoriesAction } from "../category-layout/categoryAction.js";
 
 const Home = () => {
   const dispatch = useDispatch();
 
   const { products } = useSelector((state) => state.product);
+
   console.log(products);
 
   useEffect(() => {
     dispatch(fetchProductsAction());
-  }, []);
+    dispatch(fetchCategoriesAction());
+  }, [dispatch]);
 
   return (
     <div className="container">

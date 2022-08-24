@@ -7,6 +7,7 @@ import "./Header.css";
 
 export const Header = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
+  const { categories } = useSelector((state) => state.category);
 
   return (
     <Navbar bg="light" expand="lg">
