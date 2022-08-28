@@ -4,6 +4,7 @@ import HomePage from "./pages/home-page/HomePage";
 import ProductPage from "./pages/products-page/ProductPage";
 import { ProductLandingPage } from "./pages/product-landing-page/ProductLandingPage";
 import Checkout from "./pages/checkout/Checkout";
+import Categories from "./components/categories/Categories";
 
 const bikes = [
   {
@@ -70,6 +71,14 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/products" element={<ProductPage />}></Route>
+        {/* categories */}
+
+        <Route path="categories/:categories" element={<Categories />}></Route>
+        <Route
+          path="categories/:categories/:sub-category"
+          element={<Categories />}
+        ></Route>
+
         <Route path="/checkout" element={<Checkout bikes={bikes} />}></Route>
         <Route
           path="/product-landing-page/:_id"

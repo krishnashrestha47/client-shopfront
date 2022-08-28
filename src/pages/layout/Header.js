@@ -29,16 +29,20 @@ export const Header = () => {
             </Link>
 
             {parentCategories.map((item, i) => (
-              <NavDropdown title={item.catName} id="navbarScrollingDropdown">
-                {subCategories.map(
-                  (childCat) =>
-                    childCat.parentCatId === item._id && (
-                      <NavDropdown.Item href="#action3">
-                        {childCat.catName}
-                      </NavDropdown.Item>
-                    )
-                )}
-              </NavDropdown>
+              <Link to="/categories/:category" className="nav-link">
+                <NavDropdown title={item.catName} id="navbarScrollingDropdown">
+                  {subCategories.map(
+                    (childCat) =>
+                      childCat.parentCatId === item._id && (
+                        <Link to="/categories/:category/:sub-category">
+                          <NavDropdown.Item href="/">
+                            {childCat.catName}
+                          </NavDropdown.Item>
+                        </Link>
+                      )
+                  )}
+                </NavDropdown>
+              </Link>
             ))}
           </Nav>
           <Form className="d-flex">
