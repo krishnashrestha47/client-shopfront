@@ -5,13 +5,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { setCartItems } from "../../components/cart/cartSlice";
 import "./Header.css";
 import logo from "../../assets/logo.png";
-import { current } from "@reduxjs/toolkit";
 
 export const Header = () => {
   const navigate = useNavigate();
   const [hovered, setHovered] = useState("");
 
   const [show, setShow] = useState(false);
+
   const showDropdown = (e) => {
     setHovered(e.target.innerText);
     setShow(true);
@@ -27,13 +27,11 @@ export const Header = () => {
   const parentCategories = categories.filter((item) => !item.parentCatId);
   const subCategories = categories.filter((item) => item.parentCatId);
 
-  // const handleOnParentCatClick = (pagelink) => {
-  //   navigate(`/categories/${pagelink}`);
-  // };
+  const handleOnCategoryClick = (slug) => {
+    console.log(slug);
 
-  // const handleOnChildCatClick = (cat, subcat) => {
-  //   navigate(`/categories/${cat}/${subcat}`);
-  // };
+    navigate(`categories/${slug}`);
+  };
 
   return (
     <Navbar className="fw-bold" bg="light" expand="lg">
@@ -51,28 +49,33 @@ export const Header = () => {
             </Link>
 
             {parentCategories.map((item, i) => (
-              <NavDropdown
-                title={item.catName}
-                // onClick={() => {
-                //   handleOnParentCatClick(item.slug);
-                // }}
-                show={show && hovered === item.catName}
-                onMouseEnter={showDropdown}
-                onMouseLeave={hideDropdown}
-              >
-                {subCategories.map(
-                  (childCat) =>
-                    childCat.parentCatId === item._id && (
-                      <NavDropdown.Item
-                      // onClick={() =>
-                      //   handleOnChildCatClick(item.slug, childCat.slug)
-                      // }
-                      >
-                        {childCat.catName}
-                      </NavDropdown.Item>
-                    )
-                )}
-              </NavDropdown>
+              <Link to={`/categories/${item.slug}`} className="nav-link">
+                <NavDropdown
+                  title={item.catName}
+                  show={show && hovered === item.catName}
+                  onMouseEnter={showDropdown}
+                  onMouseLeave={hideDropdown}
+                  onClick={() => handleOnCategoryClick(item.slug)}
+                >
+                  {subCategories.map(
+                    (childCat) =>
+                      childCat.parentCatId === item._id && (
+                        <NavDropdown.Item>
+                          <Nav.Link
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              return handleOnCategoryClick(
+                                item.slug + "/" + childCat.slug
+                              );
+                            }}
+                          >
+                            {childCat.catName}
+                          </Nav.Link>
+                        </NavDropdown.Item>
+                      )
+                  )}
+                </NavDropdown>
+              </Link>
             ))}
           </Nav>
           <Form className="d-flex">
