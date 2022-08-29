@@ -43,3 +43,6 @@ nav.navbar {
   display: block;
   margin-top: 0;
 }
+.navdropdown > .dropdownmenu:hover {
+  display: block;
+}
