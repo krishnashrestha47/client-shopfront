@@ -16,6 +16,15 @@ export const fetchAllProducts = () => {
   }
 };
 
+export const fetChAllProductsByParentCatId = (ids) => {
+  try {
+    const response = axios.post(productsEP, ids);
+    return response;
+  } catch (error) {
+    return error.message;
+  }
+};
+
 // categories
 
 export const fetchAllCategories = () => {
