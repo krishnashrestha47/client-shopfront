@@ -73,11 +73,11 @@ function App() {
         <Route path="/products" element={<ProductPage />}></Route>
         {/* categories */}
 
-        <Route path="categories/:categories" element={<Categories />}></Route>
-        <Route
+        <Route path="categories/:slug" element={<Categories />}></Route>
+        {/* <Route
           path="categories/:categories/:sub-category"
           element={<Categories />}
-        ></Route>
+        ></Route> */}
 
         <Route path="/checkout" element={<Checkout bikes={bikes} />}></Route>
         <Route
