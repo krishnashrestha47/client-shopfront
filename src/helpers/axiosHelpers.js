@@ -16,7 +16,7 @@ export const fetchAllProducts = () => {
   }
 };
 
-export const fetChAllProductsByParentCatId = (ids) => {
+export const fetchAllProductsByParentCatId = (ids) => {
   try {
     const response = axios.post(productsEP, ids);
     return response;
