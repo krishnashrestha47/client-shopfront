@@ -11,6 +11,14 @@ const Categories = () => {
 
   let { _id } = parentCategories.find((item) => item.slug === slug);
 
+  let ids = [];
+
+  subCategories.filter(
+    (item) => item.parentCatId === _id && ids.push(item._id)
+  );
+
+  console.log(ids);
+
   return <div>Categories</div>;
 };
 
