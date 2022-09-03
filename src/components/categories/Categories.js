@@ -21,12 +21,10 @@ const Categories = () => {
   subCategories.filter(
     (item) => item.parentCatId === _id && ids.push(item._id)
   );
-  console.log(ids);
 
   useEffect(() => {
     const getData = async () => {
       const { data } = await fetchAllProductsByParentCatId(ids);
-      console.log(data);
       setFilteredProducts(data);
     };
     getData();

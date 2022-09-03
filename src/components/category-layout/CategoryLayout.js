@@ -32,7 +32,6 @@ const CategoryLayout = () => {
   ];
 
   const { categories } = useSelector((state) => state.category);
-  console.log(categories);
 
   return (
     <div className="mt-5">
