@@ -30,7 +30,7 @@ export const Header = () => {
   const handleOnCategoryClick = (slug) => {
     console.log(slug);
 
-    navigate(`categories/${slug}`);
+    navigate(`/categories/${slug}`);
   };
 
   return (
