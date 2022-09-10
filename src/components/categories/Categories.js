@@ -8,6 +8,7 @@ import { DefaultLayout } from "../../pages/layout/DefaultLayout";
 const Categories = () => {
   const { categories } = useSelector((state) => state.category);
   const { slug } = useParams();
+  console.log(slug);
 
   const [filteredProducts, setFilteredProducts] = useState([]);
 

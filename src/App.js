@@ -5,6 +5,7 @@ import ProductPage from "./pages/products-page/ProductPage";
 import { ProductLandingPage } from "./pages/product-landing-page/ProductLandingPage";
 import Checkout from "./pages/checkout/Checkout";
 import Categories from "./components/categories/Categories";
+import ProductsBySubCatPage from "./pages/products-by-subcat-page/ProductsBySubCatPage";
 
 const bikes = [
   {
@@ -75,8 +76,8 @@ function App() {
 
         <Route path="categories/:slug" element={<Categories />}></Route>
         {/* <Route
-          path="categories/:categories/:sub-category"
-          element={<Categories />}
+          path="categories/:slug/:sub-category"
+          element={<ProductsBySubCatPage />}
         ></Route> */}
 
         <Route path="/checkout" element={<Checkout bikes={bikes} />}></Route>
